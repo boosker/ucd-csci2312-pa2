@@ -1,3 +1,6 @@
+// File: Point.h
+// Name: Jacob Jolly
+// Class: CSCI 2312
 #ifndef CLUSTERING_POINT_H
 #define CLUSTERING_POINT_H
 
@@ -5,12 +8,15 @@
 
 namespace Clustering {
 
+    static constexpr char POINT_VALUE_DELIM = ',';
+
     class Point {
         unsigned int __id;
         int __dim;        // number of dimensions of the point
         double *__values; // values of the point's dimensions
 
         static unsigned int __idGen; // id generator
+        static constexpr char POINT_VALUE_DELIM = ',';
 
     public:
         Point(int);
@@ -22,10 +28,10 @@ namespace Clustering {
         ~Point();
 
         // Accessors & mutators
-        int getId() const;
-        int getDims() const;
-        void setValue(int, double);
-        double getValue(int) const;
+        int getId() const { return __id; }
+        int getDims() const { return __dim; }
+        void setValue(int i, double d) { __values[i] = d; }
+        double getValue(int i) const { return __values[i];}
 
         // Functions
         double distanceTo(const Point &) const;
@@ -55,7 +61,8 @@ namespace Clustering {
         friend bool operator>=(const Point &, const Point &);
 
         friend std::ostream &operator<<(std::ostream &, const Point &);
-        friend std::istream &operator>>(std::istream &, Point &);
+
+        friend std::istream &operator>>(std::istream &in, Point &p);
     };
 
 }

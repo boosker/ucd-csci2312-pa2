@@ -1,3 +1,6 @@
+// File: Cluster.h
+// Name: Jacob Jolly
+// Class: CSCI 2312
 #ifndef CLUSTERING_CLUSTER_H
 #define CLUSTERING_CLUSTER_H
 
@@ -6,24 +9,25 @@
 namespace Clustering {
 
     typedef struct LNode *LNodePtr;
+    typedef Point *PointPtr;
 
     struct LNode {
 
-        Point point;
+        Point point = Point(int());
         LNodePtr next;
-        LNode(const Point &p, LNodePtr n);
 
+        LNode(const Point &p, LNodePtr n);
     };
 
     class Cluster {
 
         int __size;
         LNodePtr __points;
-
+/*
         void __del();
         void __cpy(LNodePtr pts);
         bool __in(const Point &p) const;
-
+*/
 
     public:
         Cluster();
@@ -40,6 +44,7 @@ namespace Clustering {
         void add(const Point &); // TODO add asc order to the requirements
         const Point &remove(const Point &);
         bool contains(const Point &);
+        void sort();
 
         // Overloaded operators
 
