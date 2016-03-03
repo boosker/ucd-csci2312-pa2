@@ -1,5 +1,9 @@
 ## CSCI 2312: Programming Assignment 2
 
+* * * * * * *
+JJOLLY PA2: 192/204 Tests completed successfully on 3/2/2016
+* * * * * * *
+
 _operator overloading and linked data structures_
 
 * * *
