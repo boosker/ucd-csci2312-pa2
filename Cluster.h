@@ -44,7 +44,6 @@ namespace Clustering {
         void add(const Point &); // TODO add asc order to the requirements
         const Point &remove(const Point &);
         bool contains(const Point &);
-        void sort();
 
         // Overloaded operators
 

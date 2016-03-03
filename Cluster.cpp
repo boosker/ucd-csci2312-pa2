@@ -149,10 +149,6 @@ namespace Clustering {
         return false;
     }
 
-    // Sort Function Experiment
-    void Cluster::sort() {
-    }
-
     // OVERLOADED OPERATORS:
 
       // MEMBER FUNCTIONS:
