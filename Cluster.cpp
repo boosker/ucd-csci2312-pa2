@@ -82,9 +82,6 @@ namespace Clustering {
     // Add Point Function
     void Cluster::add(const Point &point) {
         LNodePtr newNode = new LNode(point ,nullptr);
-        LNodePtr current;
-        LNodePtr previous;
-        newNode->point = point;
 
         if (__points == nullptr) {
             __points = newNode;
@@ -95,8 +92,7 @@ namespace Clustering {
             __points = newNode;
         }
         else {
-            previous = __points;
-            current = __points->next;
+            LNodePtr previous = __points, current = __points->next;
 
             while (true) {
                 if (current == nullptr || current->point > point) {
