@@ -16,6 +16,8 @@ namespace Clustering {
     // ID Generator
     unsigned int Point::__idGen = 0;
 
+    static constexpr char POINT_VALUE_DELIM = ',';
+
     // Constructors
 
     Point::Point(int i) : __id(__idGen++), __dim(i), __values(new double[__dim]) {
@@ -49,6 +51,12 @@ namespace Clustering {
     Point::~Point() {
         delete [] __values;
     }
+
+    // Accessor Functions
+    int Point::getId() const { return __id; }
+    int Point::getDims() const { return __dim; }
+    void Point::setValue(int i, double d) { __values[i] = d; }
+    double Point::getValue(int i) const { return __values[i];}
 
     // Functions
     double Point::distanceTo(const Point &p) const {

@@ -11,6 +11,8 @@
 using namespace std;
 
 namespace Clustering {
+    static constexpr char POINT_VALUE_DELIM = ',';
+
     // LNode Constructor
     LNode::LNode(const Point &p, LNodePtr n) : point(p), next(n) {}
 
@@ -232,8 +234,7 @@ namespace Clustering {
         std::string line;
         while (getline(in,line)) {
             int d = (int) std::count(line.begin(),
-                                     line.end(),
-                                     Clustering::POINT_VALUE_DELIM);
+                                     line.end(), Clustering::POINT_VALUE_DELIM);
 
             Point p(d + 1);// = new Clustering::Point(d + 1);
             std::stringstream lineStream(line);

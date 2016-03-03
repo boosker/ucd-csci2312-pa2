@@ -8,15 +8,12 @@
 
 namespace Clustering {
 
-    static constexpr char POINT_VALUE_DELIM = ',';
-
     class Point {
         unsigned int __id;
         int __dim;        // number of dimensions of the point
         double *__values; // values of the point's dimensions
 
         static unsigned int __idGen; // id generator
-        static constexpr char POINT_VALUE_DELIM = ',';
 
     public:
         Point(int);
@@ -28,10 +25,10 @@ namespace Clustering {
         ~Point();
 
         // Accessors & mutators
-        int getId() const { return __id; }
-        int getDims() const { return __dim; }
-        void setValue(int i, double d) { __values[i] = d; }
-        double getValue(int i) const { return __values[i];}
+        int getId() const;
+        int getDims() const;
+        void setValue(int i, double d);
+        double getValue(int i) const;
 
         // Functions
         double distanceTo(const Point &) const;
